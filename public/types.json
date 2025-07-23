@@ -1,0 +1,110 @@
+{
+	"normal": {
+		"bg": "#A8A77A",
+		"title": "#4A4A32",
+		"url": "https://www.pokecardgenerator.com/assets/img/tcg-gen/basic-normal.webp",
+		"symbol": "https://www.pokecardgenerator.com/assets/img/tcg-gen/normal.webp"
+	},
+	"fire": {
+		"bg": "#EE8130",
+		"title": "#732A00",
+		"url": "https://www.pokecardgenerator.com/assets/img/tcg-gen/basic-fire.webp",
+		"symbol": "https://www.pokecardgenerator.com/assets/img/tcg-gen/fire.webp"
+	},
+	"water": {
+		"bg": "#6390F0",
+		"title": "#0A285A",
+		"url": "https://www.pokecardgenerator.com/assets/img/tcg-gen/basic-water.webp",
+		"symbol": "https://www.pokecardgenerator.com/assets/img/tcg-gen/water.webp"
+	},
+	"electric": {
+		"bg": "#F7D02C",
+		"title": "#7A5A00",
+		"url": "https://www.pokecardgenerator.com/assets/img/tcg-gen/basic-electric.webp",
+		"symbol": "https://www.pokecardgenerator.com/assets/img/tcg-gen/electric.webp"
+	},
+	"grass": {
+		"bg": "#7AC74C",
+		"title": "#2D6A18",
+		"url": "https://www.pokecardgenerator.com/assets/img/tcg-gen/basic-grass.webp",
+		"symbol": "https://www.pokecardgenerator.com/assets/img/tcg-gen/grass.webp"
+	},
+	"ice": {
+		"bg": "#96D9D6",
+		"title": "#2A6664",
+		"url": "https://www.pokecardgenerator.com/assets/img/tcg-gen/basic-water.webp",
+		"symbol": "https://www.pokecardgenerator.com/assets/img/tcg-gen/water.webp"
+	},
+	"fighting": {
+		"bg": "#C22E28",
+		"title": "#5A0F0B",
+		"url": "https://www.pokecardgenerator.com/assets/img/tcg-gen/basic-fighting.webp",
+		"symbol": "https://www.pokecardgenerator.com/assets/img/tcg-gen/fighting.webp"
+	},
+	"poison": {
+		"bg": "#A33EA1",
+		"title": "#4A1450",
+		"url": "https://www.pokecardgenerator.com/assets/img/tcg-gen/basic-psychic.webp",
+		"symbol": "https://www.pokecardgenerator.com/assets/img/tcg-gen/psychic.webp"
+	},
+	"ground": {
+		"bg": "#E2BF65",
+		"title": "#6A4A1E",
+		"url": "https://www.pokecardgenerator.com/assets/img/tcg-gen/basic-normal.webp",
+		"symbol": "https://www.pokecardgenerator.com/assets/img/tcg-gen/normal.webp"
+	},
+	"flying": {
+		"bg": "#A98FF3",
+		"title": "#3F2A84",
+		"url": "https://www.pokecardgenerator.com/assets/img/tcg-gen/basic-normal.webp",
+		"symbol": "https://www.pokecardgenerator.com/assets/img/tcg-gen/normal.webp"
+	},
+	"psychic": {
+		"bg": "#F95587",
+		"title": "#8A1436",
+		"url": "https://www.pokecardgenerator.com/assets/img/tcg-gen/basic-psychic.webp",
+		"symbol": "https://www.pokecardgenerator.com/assets/img/tcg-gen/psychic.webp"
+	},
+	"bug": {
+		"bg": "#A6B91A",
+		"title": "#4F5A00",
+		"url": "https://www.pokecardgenerator.com/assets/img/tcg-gen/basic-grass.webp",
+		"symbol": "https://www.pokecardgenerator.com/assets/img/tcg-gen/grass.webp"
+	},
+	"rock": {
+		"bg": "#B6A136",
+		"title": "#5A4F18",
+		"url": "https://www.pokecardgenerator.com/assets/img/tcg-gen/basic-fighting.webp",
+		"symbol": "https://www.pokecardgenerator.com/assets/img/tcg-gen/fighting.webp"
+	},
+	"ghost": {
+		"bg": "#735797",
+		"title": "#2A1F50",
+		"url": "https://www.pokecardgenerator.com/assets/img/tcg-gen/basic-dark.webp",
+		"symbol": "https://www.pokecardgenerator.com/assets/img/tcg-gen/dark.webp"
+	},
+	"dragon": {
+		"bg": "#6F35FC",
+		"title": "#2A0A8A",
+		"url": "https://www.pokecardgenerator.com/assets/img/tcg-gen/basic-dragon.webp",
+		"symbol": "https://www.pokecardgenerator.com/assets/img/tcg-gen/dragon.webp"
+	},
+	"dark": {
+		"bg": "#705746",
+		"title": "#2D241E",
+		"url": "https://www.pokecardgenerator.com/assets/img/tcg-gen/basic-dark.webp",
+		"symbol": "https://www.pokecardgenerator.com/assets/img/tcg-gen/dark.webp"
+	},
+	"steel": {
+		"bg": "#B7B7CE",
+		"title": "#4A4A66",
+		"url": "https://www.pokecardgenerator.com/assets/img/tcg-gen/basic-steel.webp",
+		"symbol": "https://www.pokecardgenerator.com/assets/img/tcg-gen/steel.webp"
+	},
+	"fairy": {
+		"bg": "#D685AD",
+		"title": "#852D5A",
+		"url": "https://www.pokecardgenerator.com/assets/img/tcg-gen/basic-fairy.webp",
+		"symbol": "https://www.pokecardgenerator.com/assets/img/tcg-gen/fairy.webp"
+	}
+}
