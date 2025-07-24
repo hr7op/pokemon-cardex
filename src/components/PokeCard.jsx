@@ -5,7 +5,6 @@ export default function PokeCard({ pokemon }) {
 	const [colors, setColors] = useState([]);
 
 	useEffect(() => {
-		if (!pokemon) return;
 		fetch("types.json")
 			.then((res) => res.json())
 			.then((data) => {
@@ -21,9 +20,11 @@ export default function PokeCard({ pokemon }) {
 			});
 	}, [pokemon]);
 
+	const nameStyling = pokemon.name.includes("-") ? "1.3rem" : "2rem";
+
 	return (
 		<>
-			{typeData && (
+			{typeData && colors && (
 				<div
 					className="card-container"
 					style={{
@@ -34,10 +35,19 @@ export default function PokeCard({ pokemon }) {
 				>
 					<img src={typeData.url} className="card" />
 					<img src={pokemon.images.artwork} className="poke-image" />
-					{/* <img id="gif" src={pokemon.images.gif[0]} alt="pokemon-gif"></img> */}
+					{/* <img
+						id="gif"
+						src={pokemon.images.gif[0]}
+						alt="pokemon-gif"
+					></img> */}
 
 					<div className="top-stats stats">
-						<span className="name">{pokemon.name}</span>
+						<span
+							className="name"
+							style={{ fontSize: nameStyling }}
+						>
+							{pokemon.name}
+						</span>
 						<span id="hp">
 							HP <b className="numbers">{pokemon.stats.hp}</b>
 						</span>

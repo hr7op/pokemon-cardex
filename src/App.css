@@ -60,17 +60,27 @@ form {
 	width: 40%;
 	padding: 5px;
 	padding-left: 1rem;
-	border-radius: 5px;
+	border-radius: 10px;
 	font-size: 1.3rem;
 	font-weight: bold;
 }
 
-#submit {
+#submit-btn {
 	height: 50px;
 	padding: 7px 20px;
 	border-radius: 10px;
 	font-size: 1.2rem;
 	font-weight: 800;
+}
+
+#submit-btn:hover{
+	color: black;
+	background: linear-gradient(to bottom, #fff 0%, #fff 50%, #e3350d 50%, #e3350d 100%);
+	box-shadow: 0 0 20px 5px #fff, 0 0 40px 10px #e3350d  inset;
+	transform: scale(1.08) rotate(-2deg);
+	border: 2px solid #f9f8f3;
+	transition: all 0.2s cubic-bezier(0.4, 2, 0.3, 1);
+	cursor: pointer;
 }
 
 /* PokeCard styling */
@@ -93,11 +103,11 @@ form {
 	scale: 0.5;
 }
 
-#gif {
+/* #gif {
 	position: absolute;
-	top: 45%;
-	right: 5%;
-}
+	top: 55%;
+	right: 40%;
+} */
 
 /* Stats */
 .top-stats {
@@ -120,7 +130,6 @@ form {
 
 .name {
 	font-size: 2rem;
-	/* font-weight: bold; */
 	text-transform: capitalize;
 }
 
@@ -159,8 +168,6 @@ form {
 
 .types span {
 	font-family: "goldman", system-ui;
-	/* color: white;
-	background-color: red; */
 	font-size: 1rem;
 	padding: 5px 15px;
 	border-radius: 10px;
