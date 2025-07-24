@@ -1,6 +1,6 @@
 export default function Input(props) {
 	function submit(inputData) {
-		const user = inputData.get("search");
+		const user = inputData.get("search").trim();
 
 		// fetched only if the entered name is valid
 		if (props.names.includes(user)) props.fetching(user);
@@ -15,7 +15,9 @@ export default function Input(props) {
 				placeholder="bulbasaur"
 				id="search-bar"
 			/>
-			<button id="submit-btn">Search</button>
+			<button type="submit" id="submit-btn">
+				Search
+			</button>
 		</form>
 	);
 }
