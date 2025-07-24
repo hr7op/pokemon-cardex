@@ -1,6 +1,7 @@
 export default function Input(props) {
 	function submit(inputData) {
-		const user = inputData.get("search").trim();
+		let user = inputData.get("search").toLowerCase();
+		user = user.trim();
 
 		// fetched only if the entered name is valid
 		if (props.names.includes(user)) props.fetching(user);
