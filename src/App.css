@@ -82,6 +82,11 @@ form {
 	transition: all 0.2s cubic-bezier(0.4, 2, 0.3, 1);
 	cursor: pointer;
 }
+#submit-btn:active {
+	transform: scale(0.95) translateY(2px);
+	box-shadow: 0 0 10px 2px #e3350d inset;
+	transition: transform 0.08s cubic-bezier(0.4, 2, 0.3, 1);
+}
 
 /* PokeCard styling */
 
@@ -177,3 +182,19 @@ form {
 	border-width: 4px;
 	text-transform: capitalize;
 }
+
+.description{
+	height: 100%;
+	width: 100%;
+	margin-top: 3rem;
+}
+
+.description h1{
+	font-family: "Pokemon Hollow", system-ui;
+	color: red;
+	text-decoration: underline;
+}
+#svg{
+	height: 50vh;
+}
+

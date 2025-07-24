@@ -1,22 +1,22 @@
-import { useState, useEffect } from "react";
+import { useState, useRef, useEffect } from "react";
 
 export default function PokeCard({ pokemon }) {
+	const colors = useRef(null);
 	const [typeData, setTypeData] = useState(null);
-	const [colors, setColors] = useState([]);
 
 	useEffect(() => {
 		fetch("types.json")
 			.then((res) => res.json())
 			.then((data) => {
-				setTypeData(data[pokemon.types[0]]);
 				const arr = [];
-				pokemon.types.map((type, index) =>
+				pokemon.types.map((type) => {
 					arr.push({
-						text: data[pokemon.types[index]].title,
-						bg: data[pokemon.types[index]].bg,
-					})
-				);
-				setColors(arr);
+						text: data[type].title,
+						bg: data[type].bg,
+					});
+				});
+				colors.current = arr;
+				setTypeData(data[pokemon.types[0]]);
 			});
 	}, [pokemon]);
 
@@ -24,7 +24,7 @@ export default function PokeCard({ pokemon }) {
 
 	return (
 		<>
-			{typeData && colors && (
+			{typeData && colors.current.length === pokemon.types.length && (
 				<div
 					className="card-container"
 					style={{
@@ -73,21 +73,28 @@ export default function PokeCard({ pokemon }) {
 					</div>
 
 					<div className="types">
-						{pokemon.types.map((type, index) => (
-							<span
-								key={index}
-								id={type}
-								style={{
-									backgroundColor: colors[index].bg,
-									color: colors[index].text,
-								}}
-							>
-								{type}
-							</span>
-						))}
+						{pokemon.types.map((type, index) => {
+							console.log(colors[index]);
+							console.log(type);
+							return (
+								<span
+									key={index}
+									id={type}
+									style={{
+										backgroundColor:
+											colors.current[index].bg,
+										color: colors.current[index].text,
+									}}
+								>
+									{type}
+								</span>
+							);
+						})}
 					</div>
 				</div>
 			)}
+
+			
 		</>
 	);
 }
