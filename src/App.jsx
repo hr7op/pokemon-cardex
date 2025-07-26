@@ -49,8 +49,8 @@ function App() {
 			});
 	}
 
+	
 	useEffect(() => {
-		
 		//displaying the default card
 		fetching("bulbasaur");
 
@@ -64,7 +64,7 @@ function App() {
 		<>
 			<Header />
 			<Input fetching={fetching} names={names} />
-			{pokemon && <PokeCard pokemon={pokemon} />}
+			{pokemon && <PokeCard pokemon={pokemon}/>}
 			<Footer />
 		</>
 	);

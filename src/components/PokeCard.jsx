@@ -1,21 +1,26 @@
 import { useState, useRef, useEffect } from "react";
+import weakness from "../weakness.js";
 
 export default function PokeCard({ pokemon }) {
 	const colors = useRef(null);
 	const [typeData, setTypeData] = useState(null);
+	const obj = useRef(null);
 
 	useEffect(() => {
+		obj.current = weakness(pokemon.types[0]);
 		fetch("types.json")
 			.then((res) => res.json())
 			.then((data) => {
-				const arr = [];
+				const temp = [];
 				pokemon.types.map((type) => {
-					arr.push({
+					temp.push({
 						text: data[type].title,
 						bg: data[type].bg,
 					});
 				});
-				colors.current = arr;
+				temp.push({ text: data[obj.current].bg }); //also pushing the weakness color at the last index
+
+				colors.current = temp;
 				setTypeData(data[pokemon.types[0]]);
 			});
 	}, [pokemon]);
@@ -24,7 +29,7 @@ export default function PokeCard({ pokemon }) {
 
 	return (
 		<>
-			{typeData && colors.current.length === pokemon.types.length && (
+			{typeData && colors.current.length - 1 === pokemon.types.length && (
 				<div
 					className="card-container"
 					style={{
@@ -35,11 +40,11 @@ export default function PokeCard({ pokemon }) {
 				>
 					<img src={typeData.url} className="card" />
 					<img src={pokemon.images.artwork} className="poke-image" />
-					{/* <img
+					<img
 						id="gif"
 						src={pokemon.images.gif[0]}
 						alt="pokemon-gif"
-					></img> */}
+					></img>
 
 					<div className="top-stats stats">
 						<span
@@ -74,8 +79,6 @@ export default function PokeCard({ pokemon }) {
 
 					<div className="types">
 						{pokemon.types.map((type, index) => {
-							console.log(colors[index]);
-							console.log(type);
 							return (
 								<span
 									key={index}
@@ -91,10 +94,18 @@ export default function PokeCard({ pokemon }) {
 							);
 						})}
 					</div>
+
+					<div
+						className="weakness stats"
+						style={{
+							color: colors.current[colors.current.length - 1]
+								.text,
+						}}
+					>
+						{obj.current}
+					</div>
 				</div>
 			)}
-
-			
 		</>
 	);
 }
