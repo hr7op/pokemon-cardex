@@ -1,13 +1,13 @@
 import { useState, useRef, useEffect } from "react";
-import weakness from "../weakness.js";
+import weakness from "../scripts/getWeakness.js";
 
 export default function PokeCard({ pokemon }) {
-	const colors = useRef(null);
-	const [typeData, setTypeData] = useState(null);
-	const obj = useRef(null);
+	const colors = useRef(null); // storing colors
+	const [typeData, setTypeData] = useState(null); // storing types
+	const weakStat = useRef(null);
 
 	useEffect(() => {
-		obj.current = weakness(pokemon.types[0]);
+		weakStat.current = weakness(pokemon.types[0]);
 		fetch("types.json")
 			.then((res) => res.json())
 			.then((data) => {
@@ -18,14 +18,24 @@ export default function PokeCard({ pokemon }) {
 						bg: data[type].bg,
 					});
 				});
-				temp.push({ text: data[obj.current].bg }); //also pushing the weakness color at the last index
+				temp.push({ text: data[weakStat.current].bg }); //also pushing the weakness color at the last index
 
 				colors.current = temp;
 				setTypeData(data[pokemon.types[0]]);
 			});
 	}, [pokemon]);
 
-	const nameStyling = pokemon.name.includes("-") ? "1.3rem" : "2rem";
+	//calculating the retreat section cost
+	let baseCost = 0;
+	if (pokemon.weight > 6000) baseCost = 5;
+	else if (pokemon.weight > 3000) baseCost = 4;
+	else if (pokemon.weight > 1000) baseCost = 3;
+	else if (pokemon.weight > 300) baseCost = 2;
+	else if (pokemon.weight > 50) baseCost = 1;
+	else baseCost = 0;
+
+	//styled accordingly => bigger names : smaller
+	const nameStyling = pokemon.name.length > 11 ? "1.3rem" : "2rem";
 
 	return (
 		<>
@@ -38,10 +48,11 @@ export default function PokeCard({ pokemon }) {
 							: "black",
 					}}
 				>
+					
 					<img src={typeData.url} className="card" />
 					<img src={pokemon.images.artwork} className="poke-image" />
 					<img
-						id="gif"
+						className="gif"
 						src={pokemon.images.gif[0]}
 						alt="pokemon-gif"
 					></img>
@@ -102,7 +113,18 @@ export default function PokeCard({ pokemon }) {
 								.text,
 						}}
 					>
-						{obj.current}
+						{weakStat.current}
+					</div>
+					<div className="retreat">
+						{[...Array(baseCost)].map((_, i) => (
+							<span key={i} className="retreat-cost">
+								<img
+									src="https://www.pokecardgenerator.com/assets/img/tcg-gen/normal.webp"
+									id="star-img"
+									alt="retreat-cost-img"
+								/>
+							</span>
+						))}
 					</div>
 				</div>
 			)}

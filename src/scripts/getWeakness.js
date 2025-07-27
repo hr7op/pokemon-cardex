@@ -22,5 +22,3 @@ export default function weakness(firstType) {
 
 	return primaryTypeWeaknesses[firstType];
 }
-
-

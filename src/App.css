@@ -1,8 +1,6 @@
 /* App.css - Boilerplate styles */
 
-*,
-*::after,
-*::before {
+*{
 	margin: 0;
 	padding: 0;
 }
@@ -114,14 +112,15 @@ form {
 	scale: 0.5;
 }
 
-#gif {
+.gif {
 	position: absolute;
+	height: 60px;
 	top: 10%;
 	right: 10%;
-	height: 50px;
 }
 
-/* Stats */
+/* Stats Styling */
+
 .top-stats {
 	position: absolute;
 	top: 3%;
@@ -190,7 +189,7 @@ form {
 	text-transform: capitalize;
 }
 
-.weakness{
+.weakness {
 	position: absolute;
 	left: 30%;
 	bottom: 11%;
@@ -198,21 +197,11 @@ form {
 	font-weight: 600;
 }
 
-
-
-/* new */
-
-.description {
-	height: 100%;
-	width: 100%;
-	margin-top: 3rem;
+.retreat{
+	position:absolute;
+	right: 15%;
+	bottom: 10.7%;
 }
-
-.description h1 {
-	font-family: "Pokemon Hollow", system-ui;
-	color: red;
-	text-decoration: underline;
-}
-#svg {
-	height: 50vh;
+#star-img{
+	height: 16px;
 }
